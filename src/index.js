@@ -12,7 +12,4 @@ root.render(
   </React.StrictMode>
 );
 
-// // Register service worker
-
-
 reportWebVitals();

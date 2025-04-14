@@ -6,9 +6,12 @@ import VintageTemplate from './components/VintageTemplate';
 import AudioPlayer from './components/AudioPlayer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PublicInvitation from './PublicInvitation';
+
 import { collection, doc, setDoc } from "firebase/firestore";
 import { db } from './firebase';
 import { getDoc } from 'firebase/firestore';
+
+
 
 import './App.css';
 
@@ -27,6 +30,7 @@ function MainAppContent() {
   const [shareLink, setShareLink] = useState('');
   const [showPreview, setShowPreview] = useState(false);
 
+
   const generateShareLink = async () => {
     try {
       const invitationId = Math.random().toString(36).substring(2, 9);
@@ -40,6 +44,7 @@ function MainAppContent() {
       console.error("Error generating invitation link:", error);
     }
   };
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,6 +71,7 @@ function MainAppContent() {
     }
 
   };
+
 
   window.fetchInvitation = async (id) => {
     try {
