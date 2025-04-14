@@ -1,38 +1,358 @@
-.App {
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9f3f7;
+  color: #333;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #d48fb8;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+
+button:hover {
+  background-color: #c27ba0;
+}
+
+#preview-container {
+  margin-top: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.invitation {
+  padding: 2rem;
   text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Classic Template */
+.invitation.classic {
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.invitation.classic .divider {
+  height: 1px;
+  width: 50%;
+  margin: 1rem auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.invitation.classic .couple-photo {
+  margin: 1rem auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid;
+}
+
+.invitation.classic .couple-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.invitation.classic .rsvp {
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Modern Template */
+.invitation.modern {
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.invitation.modern .modern-header {
+  padding: 2rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.invitation.modern .modern-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.invitation.modern .modern-header h2 {
+  margin: 0.5rem 0 0;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.invitation.modern .modern-content {
+  padding: 2rem;
+}
+
+.invitation.modern .couple-photo {
+  margin: 1rem auto;
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.invitation.modern .couple-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.invitation.modern .modern-details {
+  margin: 2rem 0;
+}
+
+.invitation.modern .modern-details .date {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.invitation.modern .modern-details .time {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.invitation.modern .modern-details .location {
+  font-size: 1.2rem;
+}
+
+.invitation.modern .modern-footer {
+  font-style: italic;
+  margin-top: 2rem;
+}
+
+/* Vintage Template */
+.invitation.vintage {
+  background: #f9f3f0;
+  font-family: 'Times New Roman', serif;
+}
+
+.invitation.vintage .vintage-border {
+  border: 15px solid transparent;
+  padding: 15px;
+  border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23d48fb8" stroke-width="5"/></svg>') 30 round;
+  position: relative;
+}
+
+.invitation.vintage .vintage-header {
+  margin-bottom: 2rem;
+}
+
+.invitation.vintage .vintage-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.invitation.vintage .ornament {
+  width: 100px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20"><path d="M0,10 Q25,20 50,10 T100,10" fill="none" stroke="%23d48fb8" stroke-width="2"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
+}
+
+.invitation.vintage .vintage-content {
+  line-height: 1.8;
+}
+
+.invitation.vintage .vintage-content h2 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+.invitation.vintage .couple-photo {
+  margin: 2rem auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid;
+}
+
+.invitation.vintage .couple-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.invitation.vintage .vintage-footer {
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-buttons button {
+  padding: 0.75rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .invitation {
+    padding: 1rem;
   }
+  
+  .invitation.modern .modern-header h1 {
+    font-size: 2rem;
+  }
+}
+
+button.rsvp{
+  color:themeColor;
+
+}
+
+/*//////////////////////////////////////////////
+/* Floral Animation*/
+.floral-animation {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.floral-decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 100'%3E%3Cpath d='M50,50 Q100,0 150,50 T250,50 T350,50 T450,50 T550,50 T650,50 T750,50' fill='none' stroke='%23d48fb8' stroke-width='2' stroke-dasharray='5,5'/%3E%3Cg transform='translate(100,30)'%3E%3Cpath d='M0,0 Q10,-15 20,0 T40,0' fill='none' stroke='%23d48fb8' stroke-width='1.5'/%3E%3Ccircle cx='20' cy='0' r='3' fill='%23d48fb8'/%3E%3C/g%3E%3Cg transform='translate(300,70)'%3E%3Cpath d='M0,0 Q10,-15 20,0 T40,0' fill='none' stroke='%23d48fb8' stroke-width='1.5'/%3E%3Ccircle cx='20' cy='0' r='3' fill='%23d48fb8'/%3E%3C/g%3E%3Cg transform='translate(500,30)'%3E%3Cpath d='M0,0 Q10,-15 20,0 T40,0' fill='none' stroke='%23d48fb8' stroke-width='1.5'/%3E%3Ccircle cx='20' cy='0' r='3' fill='%23d48fb8'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  animation: floralMove 30s linear infinite;
+}
+
+@keyframes floralMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 800px 0; }
+}
+
+/*///////////////////////////////////////////////////
+/*Audio Player*/
+.audio-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.music-toggle {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d48fb8;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.music-toggle:hover {
+  background: #d48fb8;
+  color: white;
+}
+
+/*////////////////////////////////////////////////////////////
+/*Share link */
+.public-invitation {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.loading {
+  color: #666;
+}
+
+.error {
+  color: #d48fb8;
+}
+
+/*////////////////////////////////
+/*Public Views*/
+.public-template {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Public View Specific Styles */
+.public-view {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.public-audio-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+/* Hide any editing controls in public view */
+.public-view .edit-controls {
+  display: none !important;
 }
